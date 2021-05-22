@@ -1,5 +1,6 @@
 :root {
   background-color: #313139;
+  font-family: "Karla", sans-serif;
 }
 
 .page {
@@ -82,6 +83,8 @@
   color: white;
   text-align: center;
   bottom: 0;
+  padding: 10px;
+  font-size: 17px;
 }
 .containerseries {
   width: 70%;
@@ -98,4 +101,8 @@
 }
 .containerfavorites {
   width: 25%;
+}
+.favorites {
+  color: white;
+  font-size: 15px;
 }

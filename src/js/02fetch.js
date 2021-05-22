@@ -9,7 +9,7 @@ function findSeries() {
   const inputValue = inputSeries.value;
   globalData = [];
 
-  fetch(`//api.tvmaze.com/search/shows?q=${inputValue}`)
+  fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
     .then((seriesResponse) => seriesResponse.json())
     .then((seriesData) => {
       //recorremos el array para guardarlo en globalData
@@ -42,7 +42,7 @@ function printShowCards(show) {
     } else {
       image = element.image.medium;
     }
-    showList += `<li id="${element.id}" class="showCard js-favorite"><img src="${image}" alt="${element.name}"></img>${element.name} </li>`;
+    showList += `<li id="${element.id}" class="showCard js-favorite"><img class="image" src="${image}" alt="${element.name}"></img><h3 class="title">${element.name}</h3> </li>`;
   });
 
   listSeries.innerHTML = showList;

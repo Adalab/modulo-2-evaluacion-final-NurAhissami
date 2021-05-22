@@ -69,7 +69,21 @@ function printFavoriteList(event) {
     } else {
       image = element.image.medium;
     }
-    list += `<li class="favoriteCard "><img src="${image}" alt="${element.name}"></img>${element.name} </li>`;
+    list += `<li class="favoriteCard "><img src="${image}" alt="${element.name}"></img>${element.name}<button onclick="removeFavoriteList" type="button" class="buttonX js-btnremove">X</button>
+    </li>`;
   });
+
+  // const allbuttons = document.querySelectorAll(".js-btnremove");
+  debugger;
   listFavoriteSeries.innerHTML = list;
+
+  // for (const remove of allbuttons) {
+  //   remove.addEventListener("click", removeFavoriteList);
+  // }
+}
+
+function removeFavoriteList(element) {
+  debugger;
+  let i = favoritesShow.indexOf(element);
+  favoritesShow.splice(i, 1);
 }

@@ -52,7 +52,7 @@ function printFavoriteList(event) {
     } else {
       image = element.image.medium;
     }
-    list += `<li class="favoriteCard"><img class="image-fav" src="${image}" alt="${element.name}"></img>${element.name}<button type="button" class="buttonX js-btnremove" data-id="${element.id}">X</button>
+    list += `<li class="favoriteCard"><img class="image-fav" src="${image}" alt="${element.name}"></img><h3 class="titleFav">${element.name}</h3><button type="button" class="buttonX js-btnremove" data-id="${element.id}">X</button>
     </li>`;
   });
 

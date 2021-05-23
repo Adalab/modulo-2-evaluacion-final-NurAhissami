@@ -7,6 +7,7 @@ let globalData = [];
 
 function findSeries(e) {
   e.preventDefault();
+  ("");
   const inputValue = inputSeries.value;
   if (!inputValue) return;
   globalData = [];

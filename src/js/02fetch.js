@@ -1,12 +1,14 @@
-btn.addEventListener("click", findSeries);
+form.addEventListener("submit", findSeries);
 
 // Array de la API
 let globalData = [];
 
 //Se crea una función que llame a la api a partir de un input
 
-function findSeries() {
+function findSeries(e) {
+  e.preventDefault();
   const inputValue = inputSeries.value;
+  if (!inputValue) return;
   globalData = [];
 
   fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
@@ -42,7 +44,11 @@ function printShowCards(show) {
     } else {
       image = element.image.medium;
     }
-    showList += `<li id="${element.id}" class="showCard js-favorite"><img class="image" src="${image}" alt="${element.name}"></img><h3 class="title">${element.name}</h3> </li>`;
+    const showClass = favoritesShow.find((fav) => fav.id === element.id)
+      ? "showfavCard"
+      : "showCard";
+    // console.log(isFavorite);
+    showList += `<li id="${element.id}" class="${showClass} js-favorite"><img class="image" src="${image}" alt="${element.name}"></img><h3 class="title">${element.name}</h3> </li>`;
   });
 
   listSeries.innerHTML = showList;

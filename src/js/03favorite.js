@@ -17,17 +17,8 @@ if (savedSeries) {
 printFavoriteList(favoritesShow);
 
 function updateFavoriteList(elementlist) {
-  debugger;
-  const updateFavoriteEvent = elementlist.target;
-  let favoriteElementID = "";
-  let isImage = false;
-  if (updateFavoriteEvent.id == "") {
-    favoriteElementID = updateFavoriteEvent.parentElement.id;
-    isImage = true;
-  } else {
-    favoriteElementID = updateFavoriteEvent.id;
-    isImage = false;
-  }
+  const updateFavoriteEvent = elementlist.currentTarget;
+  let favoriteElementID = elementlist.currentTarget.id;
   const showFavorites = favoritesShow.find(
     (element) => element.id === parseInt(favoriteElementID)
   );
@@ -36,30 +27,22 @@ function updateFavoriteList(elementlist) {
       (element) => element.id === parseInt(favoriteElementID)
     );
     favoritesShow.push(selectedElement);
-    if (isImage) {
-      updateFavoriteEvent.parentElement.classList.add("showfavCard");
-      updateFavoriteEvent.parentElement.classList.remove("showCard");
-    } else {
-      updateFavoriteEvent.classList.add("showfavCard");
-      updateFavoriteEvent.classList.remove("showCard");
-    }
+    updateFavoriteEvent.classList.add("showfavCard");
+    updateFavoriteEvent.classList.remove("showCard");
   } else {
     let i = favoritesShow.indexOf(showFavorites);
     favoritesShow.splice(i, 1);
-    if (isImage) {
-      updateFavoriteEvent.parentElement.classList.add("showCard");
-      updateFavoriteEvent.parentElement.classList.remove("showfavCard");
-    } else {
-      updateFavoriteEvent.classList.add("showCard");
-      updateFavoriteEvent.classList.remove("showfavCard");
-    }
+    updateFavoriteEvent.classList.add("showCard");
+    updateFavoriteEvent.classList.remove("showfavCard");
   }
+
   localStorage.setItem("favoritesSeries", JSON.stringify(favoritesShow));
 
   printFavoriteList(favoritesShow);
 }
 
 function printFavoriteList(event) {
+  if (!Array.isArray(event)) return;
   let list = "";
 
   event.forEach((element) => {
@@ -69,21 +52,26 @@ function printFavoriteList(event) {
     } else {
       image = element.image.medium;
     }
-    list += `<li class="favoriteCard "><img src="${image}" alt="${element.name}"></img>${element.name}<button type="button" class="buttonX js-btnremove">X</button>
+    list += `<li class="favoriteCard"><img class="image-fav" src="${image}" alt="${element.name}"></img>${element.name}<button type="button" class="buttonX js-btnremove" data-id="${element.id}">X</button>
     </li>`;
   });
 
-  // const allbuttons = document.querySelectorAll(".js-btnremove");
-  debugger;
   listFavoriteSeries.innerHTML = list;
-
-  // for (const remove of allbuttons) {
-  //   remove.addEventListener("click", removeFavoriteList);
-  // }
 }
 
+listFavoriteSeries.addEventListener("click", function (event) {
+  if (event.target.type === "button") {
+    const id = event.target.getAttribute("data-id");
+    const fav = favoritesShow.find((element) => element.id === parseInt(id));
+
+    removeFavoriteList(fav);
+    printFavoriteList(favoritesShow);
+    printShowCards(globalData);
+    localStorage.setItem("favoritesSeries", JSON.stringify(favoritesShow));
+  }
+});
+
 function removeFavoriteList(element) {
-  debugger;
   let i = favoritesShow.indexOf(element);
   favoritesShow.splice(i, 1);
 }

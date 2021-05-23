@@ -6,8 +6,9 @@ const savedSeries = JSON.parse(localStorage.getItem("favoritesSeries"));
 
 //Variables
 
-const inputForm = document.querySelector(".js-input");
-const btn = document.querySelector(".js-button");
+// const inputForm = document.querySelector(".js-input");
+// const btn = document.querySelector(".js-button");
+const form = document.querySelector(".js-input");
 
 const containerSeries = document.querySelector(".js-containList");
 
@@ -15,3 +16,5 @@ const listSeries = document.querySelector(".js-series-list");
 const listFavoriteSeries = document.querySelector(".js-favorite-list");
 
 const inputSeries = document.querySelector(".js-input-name");
+
+const btnRemove = document.querySelector(".js-btnremove");

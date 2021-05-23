@@ -24,7 +24,7 @@ function findSeries(e) {
       } else {
         const paragrhapError = document.createElement("p");
         const paragrhaptextContent = document.createTextNode(
-          "no se ha encontrado ninguna pelicula"
+          "No se ha encontrado ninguna pelicula"
         );
 
         paragrhapError.appendChild(paragrhaptextContent);

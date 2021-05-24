@@ -78,7 +78,7 @@
 }
 .containerseries {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -113,7 +113,7 @@
 
 .listFav {
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
   list-style: none;
   margin-top: 15px;
   color: white;
@@ -153,4 +153,11 @@
 
 #style-3::-webkit-scrollbar-thumb {
   background-color: #000000;
+}
+
+.hidden {
+  display: none;
+}
+.js-error {
+  width: 100%;
 }

@@ -21,14 +21,9 @@ function findSeries(e) {
       });
       if (globalData.length > 0) {
         printShowCards(globalData);
+        error.classList.add("hidden");
       } else {
-        const paragrhapError = document.createElement("p");
-        const paragrhaptextContent = document.createTextNode(
-          "No se ha encontrado ninguna pelicula"
-        );
-
-        paragrhapError.appendChild(paragrhaptextContent);
-        containerSeries.appendChild(paragrhapError);
+        error.classList.remove("hidden");
       }
     });
 }

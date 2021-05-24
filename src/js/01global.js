@@ -18,3 +18,4 @@ const listFavoriteSeries = document.querySelector(".js-favorite-list");
 const inputSeries = document.querySelector(".js-input-name");
 
 const btnRemove = document.querySelector(".js-btnremove");
+const error = document.querySelector(".js-error");

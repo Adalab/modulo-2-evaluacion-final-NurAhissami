@@ -1,8 +1,10 @@
 # Buscador de series - Examen evaluación módulo 2
 
-This web application is a **TV series search website** with which the user can search the title. In addition, the user can add series to a list of **favorites** and this list will be saved in the **localStorage** so the information is kept on the page.
+This web application is a **TV series search website** where users can search for the title. In addition, users can add series to a list of **favorites** and this list will be saved in the **localStorage** so that the information is kept on the page.
 
-## ![Screenshot of website]()
+## ![Screenshot of website](https://raw.githubusercontent.com/Adalab/modulo-2-evaluacion-final-NurAhissami/master/web-design1.png)
+
+## ![Screenshot of website](https://raw.githubusercontent.com/Adalab/modulo-2-evaluacion-final-NurAhissami/master/web-design.png)
 
 ## Tools 💻
 

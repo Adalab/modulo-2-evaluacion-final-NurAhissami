@@ -22,8 +22,11 @@ function findSeries(e) {
       if (globalData.length > 0) {
         printShowCards(globalData);
         error.classList.add("hidden");
+        img.classList.add("hidden");
       } else {
         error.classList.remove("hidden");
+        img.classList.remove("hidden");
+        listSeries.classList.add("hidden");
       }
     });
 }

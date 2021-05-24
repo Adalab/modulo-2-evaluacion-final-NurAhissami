@@ -127,7 +127,7 @@
   width: 30px;
   height: 30px;
   border: none;
-  background-color: lightseagreen;
+  background-color: #20b2aa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,4 +160,19 @@
 }
 .js-error {
   width: 100%;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ffa07a;
+}
+.js-image {
+  width: 500px;
+  height: 500px;
+}
+.errorcontain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

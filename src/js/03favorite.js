@@ -59,7 +59,9 @@ function printFavoriteList(event) {
   listFavoriteSeries.innerHTML = list;
 }
 
-listFavoriteSeries.addEventListener("click", function (event) {
+listFavoriteSeries.addEventListener("click", removeItem);
+
+function removeItem(event) {
   if (event.target.type === "button") {
     const id = event.target.getAttribute("data-id");
     const fav = favoritesShow.find((element) => element.id === parseInt(id));
@@ -69,7 +71,7 @@ listFavoriteSeries.addEventListener("click", function (event) {
     printShowCards(globalData);
     localStorage.setItem("favoritesSeries", JSON.stringify(favoritesShow));
   }
-});
+}
 
 function removeFavoriteList(element) {
   let i = favoritesShow.indexOf(element);

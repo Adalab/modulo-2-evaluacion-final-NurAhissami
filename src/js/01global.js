@@ -19,3 +19,5 @@ const btnRemove = document.querySelector(".js-btnremove");
 const error = document.querySelector(".js-error");
 const img = document.querySelector(".js-image");
 const containError = document.querySelector(".js-error-contain");
+
+const btnResett = document.querySelector(".js-buttonReset");
